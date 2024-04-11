@@ -1,7 +1,7 @@
 'use strict'
 
-function onWikiTubeInit() {
-    getVideos('beatles')
+function onWikiTubeInit(search) {
+    getVideos(search)
         .then(renderVideosList)
 }
 
@@ -20,4 +20,10 @@ function renderVideosList(videos) {
     })
 
     document.querySelector('.app-container .videos-list').innerHTML = htmlStr
+}
+
+function onSearch(ev) {
+    ev.preventDefault()
+    const searchVal = ev.target.elements['search-input'].value
+    onWikiTubeInit(searchVal)
 }
