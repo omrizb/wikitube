@@ -1,0 +1,9 @@
+header {
+    color: var(--stone-2);
+    background-color: var(--red-8);
+}
+
+header h1 {
+    font-size: 3em;
+    margin-block: 0.5em;
+}

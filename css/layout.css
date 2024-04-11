@@ -1,16 +1,15 @@
-:root {
-    --max-content: 100ch;
-    --padding-inline: 2em;
+.main-layout {
+    display: grid;
+    grid-template-columns:
+        minmax(20px, 1fr)
+        minmax(1200px, 5fr)
+        minmax(20px, 1fr);
 }
 
-.layout-wrapper {
-    --max-content: inherit;
-    --padding-inline: inherit;
-
-    width: min(var(--max-content), calc(100% - 2 * var(--padding-inline)));
-    margin-inline: auto;
+.main-layout > * {
+    grid-column: 2;
 }
 
-.full {
-    margin-inline: 0;
+.main-layout > *.full {
+    grid-column: -1 / 1;
 }

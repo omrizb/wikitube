@@ -1,3 +1,11 @@
+/* Libs */
+@import url("./lib/open-props.min.css");
+
+/* Init */
 @import url("./reset.css");
+@import url("./base.css");
 @import url("./layout.css");
 @import url("./helpers.css");
+
+/* Components */
+@import url("./components/header.css");
