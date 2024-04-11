@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns:
         minmax(20px, 1fr)
-        minmax(1200px, 5fr)
+        minmax(960px, 5fr)
         minmax(20px, 1fr);
 }
 
@@ -12,4 +12,16 @@
 
 .main-layout > *.full {
     grid-column: -1 / 1;
+}
+
+.app-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    margin-top: 2em;
+    background-color: var(--orange-3);
+}
+
+.app-container > * {
+    padding: 1em;
 }
