@@ -6,7 +6,7 @@
         <link rel="stylesheet" href="./css/styles.css" />
         <title>WikiTube</title>
     </head>
-    <body class="main-layout">
+    <body class="main-layout" onload="onWikiTubeInit()">
         <header class="full main-layout">
             <h1>WikiTube</h1>
         </header>
@@ -15,12 +15,15 @@
             <div class="app-container">
                 <div class="reft-col">
                     <h2>WikiTube</h2>
+                    <ul class="videos-list"></ul>
                 </div>
                 <div class="right-col">
                     <form>
                         <input type="search" placeholder="Search..." />
                         <button>Search</button>
                     </form>
+                    <video>Player</video>
+                    <div>Wiki results</div>
                 </div>
             </div>
         </main>
@@ -28,5 +31,9 @@
         <footer class="full main-layout">
             <p>Developed by Omri Barouch</p>
         </footer>
+
+        <script src="./lib/axios-0.21.1.min.js"></script>
+        <script src="./js/services/youtube.service.js"></script>
+        <script src="./js/controllers/wikitube.controller.js"></script>
     </body>
 </html>
