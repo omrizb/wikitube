@@ -1,16 +1,22 @@
 'use strict'
 
+let gVideos
+
 function onWikiTubeInit(search) {
     getVideos(search)
         .then(renderVideosList)
+    getWiki(search)
+        .then(res => console.log(res))
 }
 
 function renderVideosList(videos) {
     let htmlStr = ''
 
-    videos.forEach(video => {
+    gVideos = videos
+
+    videos.forEach((video, idx) => {
         htmlStr += `
-            <li>
+            <li onclick="onPlayVideo(${idx})">
                 <div class="thumbnail">
                     <img src="${video.thumbnail}">
                 </div>
@@ -26,4 +32,12 @@ function onSearch(ev) {
     ev.preventDefault()
     const searchVal = ev.target.elements['search-input'].value
     onWikiTubeInit(searchVal)
+}
+
+function onPlayVideo(idx) {
+    playVideo(gVideos[idx].videoUrl)
+}
+
+function playVideo(url) {
+    document.querySelector('.player').setAttribute('src', url)
 }
