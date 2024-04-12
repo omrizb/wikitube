@@ -38,7 +38,7 @@ function renderWiki(wikiEntries) {
         `
     })
 
-    document.querySelector('.wiki-entry').innerHTML = htmlStr
+    document.querySelector('.wiki-entries').innerHTML = htmlStr
 }
 
 function onSearch(ev) {

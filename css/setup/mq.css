@@ -1,0 +1,65 @@
+@media screen and (min-width: 740px) {
+    .app-container .player {
+        width: 640px;
+        height: 480px;
+    }
+}
+
+@media screen and (min-width: 960px) {
+    .main-layout {
+        grid-template-columns:
+            minmax(20px, 1fr)
+            minmax(920px, 6fr)
+            minmax(20px, 1fr);
+    }
+
+    .app-container {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "search-bar     search-bar"
+            "videos-list    player"
+            "videos-list    wiki";
+        gap: 20px;
+    }
+
+    .app-container .player {
+        width: 360px;
+        height: 240px;
+    }
+}
+
+@media screen and (min-width: 1080px) {
+    .main-layout {
+        grid-template-columns:
+            minmax(20px, 1fr)
+            minmax(1000px, 6fr)
+            minmax(20px, 1fr);
+    }
+
+    .app-container .search-bar .search-form input {
+        width: 400px;
+    }
+
+    .app-container .player {
+        width: 480px;
+        height: 360px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .main-layout {
+        grid-template-columns:
+            minmax(20px, 1fr)
+            minmax(1120px, 6fr)
+            minmax(20px, 1fr);
+    }
+
+    .app-container .search-bar .search-form input {
+        width: 560px;
+    }
+
+    .app-container .player {
+        width: 640px;
+        height: 480px;
+    }
+}

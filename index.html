@@ -18,11 +18,8 @@
 
         <main>
             <div class="app-container">
-                <div class="reft-col">
-                    <h2>WikiTube</h2>
-                    <ul class="videos-list"></ul>
-                </div>
-                <div class="right-col">
+                <div class="search-bar">
+                    <h2 class="app-logo">WikiTube</h2>
                     <form class="search-form" onsubmit="onSearch(event)">
                         <input
                             type="search"
@@ -32,9 +29,10 @@
                         />
                         <button>Search</button>
                     </form>
-                    <iframe class="player"></iframe>
-                    <div class="wiki-entry"></div>
                 </div>
+                <ul class="videos-list"></ul>
+                <iframe class="player"></iframe>
+                <div class="wiki-entries"></div>
             </div>
         </main>
 

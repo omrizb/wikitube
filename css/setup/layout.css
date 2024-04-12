@@ -1,0 +1,42 @@
+.main-layout {
+    display: grid;
+    grid-template-columns: 20px 1fr 20px;
+}
+
+.main-layout > * {
+    grid-column: 2;
+}
+
+.main-layout > *.full {
+    grid-column: -1 / 1;
+}
+
+.app-container {
+    display: grid;
+    grid-template-areas:
+        "search-bar"
+        "videos-list"
+        "player"
+        "wiki";
+    gap: 20px;
+
+    margin-block: 2em;
+    padding: 2em;
+    background-color: var(--orange-3);
+}
+
+.app-container > .search-bar {
+    grid-area: search-bar;
+}
+
+.app-container > .videos-list {
+    grid-area: videos-list;
+}
+
+.app-container > .player {
+    grid-area: player;
+}
+
+.app-container > .wiki-entries {
+    grid-area: wiki;
+}
