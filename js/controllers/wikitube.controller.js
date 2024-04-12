@@ -5,8 +5,8 @@ let gVideos
 function onWikiTubeInit(search) {
     getVideos(search)
         .then(renderVideosList)
-    getWiki(search)
-        .then(res => console.log(res))
+    getWiki(search, 3)
+        .then(renderWiki)
 }
 
 function renderVideosList(videos) {
@@ -26,6 +26,19 @@ function renderVideosList(videos) {
     })
 
     document.querySelector('.app-container .videos-list').innerHTML = htmlStr
+}
+
+function renderWiki(wikiEntries) {
+    let htmlStr = ''
+
+    wikiEntries.forEach(entry => {
+        htmlStr += `
+            <p class="entry-title">${entry.title}</p>
+            <p class="entry-snippet">${entry.snippet}</p>
+        `
+    })
+
+    document.querySelector('.wiki-entry').innerHTML = htmlStr
 }
 
 function onSearch(ev) {

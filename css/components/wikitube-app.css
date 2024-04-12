@@ -62,3 +62,14 @@
     border: 0;
     background-color: #000;
 }
+
+.app-container .entry-title {
+    margin-block-start: 1em;
+    font-size: 1.2em;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.app-container .entry-snippet {
+    margin-block-start: 0.3em;
+}
