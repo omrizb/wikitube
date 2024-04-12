@@ -1,0 +1,26 @@
+.search-history {
+    margin-block-start: 1.5em;
+    padding: 1em 2em;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+    font-weight: 600;
+
+    background-color: var(--orange-1);
+}
+
+.search-history .entries {
+    font-style: italic;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.search-history .entries li:hover {
+    text-decoration: underline;
+}
+
+.search-history button {
+    width: 80px;
+    margin-inline-start: 3em;
+    border-radius: 0.5em;
+}

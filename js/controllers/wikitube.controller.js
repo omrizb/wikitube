@@ -3,10 +3,22 @@
 let gVideos
 
 function onWikiTubeInit(search) {
+    renderHistory(getHistory())
+
     getVideos(search)
         .then(renderVideosList)
+
     getWiki(search, 3)
         .then(renderWiki)
+}
+
+function renderHistory(history) {
+    let htmlStr = ''
+
+    if (!history || Object.keys(history).length === 0) htmlStr += '<li>No history...</li>'
+    Object.keys(history).forEach(key => htmlStr += `<li onclick="onClickHistory('${key}')">${key}</li>`)
+
+    document.querySelector('.search-history .entries').innerHTML = htmlStr
 }
 
 function renderVideosList(videos) {
@@ -41,9 +53,20 @@ function renderWiki(wikiEntries) {
     document.querySelector('.wiki-entries').innerHTML = htmlStr
 }
 
+function onClickHistory(entry) {
+    saveToHistory(entry)
+    onWikiTubeInit(entry)
+}
+
+function onClearHistory() {
+    clearHistory()
+    renderHistory(getHistory())
+}
+
 function onSearch(ev) {
     ev.preventDefault()
     const searchVal = ev.target.elements['search-input'].value
+    saveToHistory(searchVal)
     onWikiTubeInit(searchVal)
 }
 

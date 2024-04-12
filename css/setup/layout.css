@@ -20,7 +20,7 @@
         "wiki";
     gap: 20px;
 
-    margin-block: 2em;
+    margin-block-end: 2em;
     padding: 2em;
     background-color: var(--orange-3);
 }

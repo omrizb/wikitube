@@ -17,6 +17,11 @@
         </header>
 
         <main>
+            <div class="search-history flex-align-center g-3">
+                <p>History:</p>
+                <ul class="entries flex-align-center g-2"></ul>
+                <button onclick="onClearHistory()">Clear</button>
+            </div>
             <div class="app-container">
                 <div class="search-bar">
                     <h2 class="app-logo">WikiTube</h2>
@@ -42,6 +47,7 @@
 
         <script src="./lib/axios-0.21.1.min.js"></script>
         <script src="./js/services/storage.service.js"></script>
+        <script src="./js/services/history.service.js"></script>
         <script src="./js/services/youtube.service.js"></script>
         <script src="./js/services/wiki.service.js"></script>
         <script src="./js/controllers/wikitube.controller.js"></script>
