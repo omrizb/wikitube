@@ -7,6 +7,10 @@
     align-items: center;
 }
 
+.wrap {
+    flex-wrap: wrap;
+}
+
 .g-1 {
     gap: 10px;
 }

@@ -22,12 +22,9 @@ function renderHistory(history) {
 }
 
 function renderVideosList(videos) {
-    let htmlStr = ''
-
     gVideos = videos
 
-    videos.forEach((video, idx) => {
-        htmlStr += `
+    const htmlStr = videos.map((video, idx) => `
             <li onclick="onPlayVideo(${idx})">
                 <div class="thumbnail">
                     <img src="${video.thumbnail}">
@@ -35,20 +32,17 @@ function renderVideosList(videos) {
                 <p>${video.title}</p>
             </li>
         `
-    })
+    ).join('')
 
     document.querySelector('.app-container .videos-list').innerHTML = htmlStr
 }
 
 function renderWiki(wikiEntries) {
-    let htmlStr = ''
-
-    wikiEntries.forEach(entry => {
-        htmlStr += `
+    const htmlStr = wikiEntries.map(entry => `
             <p class="entry-title">${entry.title}</p>
             <p class="entry-snippet">${entry.snippet}</p>
         `
-    })
+    ).join('')
 
     document.querySelector('.wiki-entries').innerHTML = htmlStr
 }
@@ -60,7 +54,7 @@ function onClickHistory(entry) {
 
 function onClearHistory() {
     clearHistory()
-    renderHistory(getHistory())
+    renderHistory({})
 }
 
 function onSearch(ev) {
